@@ -1,0 +1,12 @@
+# src/main/resources/application.yml
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false  # This server doesn't register itself
+    fetch-registry: false        # No need to fetch registry
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
